@@ -16,6 +16,12 @@ service:
   type: ClusterIP
   port: 80
 
+env:
+  - name: HELLO_SUBJECT
+    valueFrom:
+      fieldRef:
+        fieldPath: metadata.name
+
 ingress:
   enabled: false
   annotations: {}
